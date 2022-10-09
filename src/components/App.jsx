@@ -1,8 +1,8 @@
 import { Component } from 'react';
 
 import { Box } from 'components/Commons/Box';
-import { ContactForm } from './components/ContactForm/ContactForm';
-import { Filter } from './components/Filter/Filter';
+import { ContactForm } from './ContactForm/ContactForm';
+import { Filter } from './Filter/Filter';
 import { ContactList } from 'components/ContactList/ContactList';
 
 export class App extends Component {
@@ -15,6 +15,21 @@ export class App extends Component {
     ],
     filter: '',
   };
+
+  componentDidMount() {
+    const contacts = localStorage.getItem('phoneBook');
+    const parsedContacts = JSON.parse(contacts);
+
+    if (parsedContacts) {
+      this.setState({ contacts: parsedContacts });
+    }
+  }
+
+  componentDidUpdate(prevProps, prevState) {
+    if (this.state.contacts !== prevState.contacts) {
+      localStorage.setItem('phoneBook', JSON.stringify(this.state.contacts));
+    }
+  }
 
   handleChange = e => {
     this.setState({ [e.target.name]: e.target.value });
