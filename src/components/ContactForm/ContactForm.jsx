@@ -1,6 +1,6 @@
 import { Component } from 'react';
 import { nanoid } from 'nanoid';
-// import PropTypes from 'prop-types';
+import PropTypes from 'prop-types';
 import { Form, Label, Input, Button } from './ContactForm.styled';
 
 export class ContactForm extends Component {
@@ -49,6 +49,7 @@ export class ContactForm extends Component {
             onChange={this.handleChange}
           />
         </Label>
+
         <Label htmlFor="number">
           <span>Number</span>
           <Input
@@ -62,13 +63,14 @@ export class ContactForm extends Component {
             onChange={this.handleChange}
           />
         </Label>
+
         <Button type="submit">Add contact</Button>
       </Form>
     );
   }
 }
 
-// ContactForm.propTypes = {
-//   onSubmit: PropTypes.func.isRequired,
-//   checkContact: PropTypes.func.isRequired,
-// };
+ContactForm.propTypes = {
+  onSubmit: PropTypes.func.isRequired,
+  checkContact: PropTypes.func.isRequired,
+};

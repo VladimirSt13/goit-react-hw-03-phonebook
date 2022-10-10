@@ -1,4 +1,4 @@
-// import PropTypes from 'prop-types';
+import PropTypes from 'prop-types';
 import { Item } from './Contact.styled';
 
 export const Contact = ({ contact, onDeleteContact }) => {
@@ -13,12 +13,12 @@ export const Contact = ({ contact, onDeleteContact }) => {
   );
 };
 
-// Contact.propTypes = {
-//   contact: PropTypes.shape({
-//     id: PropTypes.string.isRequired,
-//     name: PropTypes.string.isRequired,
-//     number: PropTypes.string.isRequired,
-//   }).isRequired,
+Contact.propTypes = {
+  contact: PropTypes.shape({
+    id: PropTypes.string.isRequired,
+    name: PropTypes.string.isRequired,
+    number: PropTypes.string.isRequired,
+  }).isRequired,
 
-//   onDeleteContact: PropTypes.func.isRequired,
-// };
+  onDeleteContact: PropTypes.func.isRequired,
+};
