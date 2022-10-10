@@ -1,7 +1,8 @@
 import PropTypes from 'prop-types';
 import { Item } from './Contact.styled';
 
-export const Contact = ({ contact: { id, name, number }, onDeleteContact }) => {
+export const Contact = ({ contact, onDeleteContact }) => {
+  const { id, name, number } = contact;
   return (
     <Item>
       <div>
@@ -13,8 +14,11 @@ export const Contact = ({ contact: { id, name, number }, onDeleteContact }) => {
 };
 
 Contact.propTypes = {
-  id: PropTypes.string.isRequired,
-  contact: PropTypes.string.isRequired,
-  number: PropTypes.string.isRequired,
+  contact: PropTypes.shape({
+    id: PropTypes.string.isRequired,
+    name: PropTypes.string.isRequired,
+    number: PropTypes.string.isRequired,
+  }).isRequired,
+
   onDeleteContact: PropTypes.func.isRequired,
 };
