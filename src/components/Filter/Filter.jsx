@@ -1,4 +1,4 @@
-import PropTypes from 'prop-types';
+// import PropTypes from 'prop-types';
 
 import { Box } from 'components/Commons/Box';
 import { FilterTitle } from './Filter.styled';
