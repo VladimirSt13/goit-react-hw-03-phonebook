@@ -1,4 +1,4 @@
-import PropTypes from 'prop-types';
+// import PropTypes from 'prop-types';
 import { Item } from './Contact.styled';
 
 export const Contact = ({ contact, onDeleteContact }) => {

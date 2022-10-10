@@ -1,4 +1,4 @@
-import PropTypes from 'prop-types';
+// import PropTypes from 'prop-types';
 import { List } from './ContactList.styled';
 import { Contact } from 'components/Contact/Contact';
 
